@@ -12,9 +12,9 @@ public class LgTV implements TV{
 		System.out.println("Lg TV --- 전원끈다.");
 	}
 	public void volumeUp() {
-		System.out.println("Lg TV --- 소리를 올린다.");
+		System.out.println("Lg TV --- 소리를 LG처럼 올린다.");
 	}
 	public void volumeDown() {
-		System.out.println("Lg TV --- 소리를 내린다.");
+		System.out.println("Lg TV --- 소리를 LG처럼 내린다.");
 	}
 }
