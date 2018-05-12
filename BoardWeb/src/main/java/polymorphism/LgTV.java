@@ -1,17 +1,20 @@
 package polymorphism;
 
-public class LgTV {
+public class LgTV implements TV{
 	
-	public void turnOn() {
-		System.out.println("Lg TV --- Àü¿øÄÒ´Ù.");
+	public LgTV() {
+		System.out.println("===> LgTV ê°ì²´ìƒì„±(1)");
 	}
-	public void turnOff() {
-		System.out.println("Lg TV --- Àü¿ø²ö´Ù.");
+	public void powerOn() {
+		System.out.println("Lg TV --- ì „ì›ì¼ ë‹¤.");
 	}
-	public void soundUp() {
-		System.out.println("Lg TV --- ¼Ò¸® ¿Ã¸°´Ù.");
+	public void powerOff() {
+		System.out.println("Lg TV --- ì „ì›ëˆë‹¤.");
 	}
-	public void soundDown() {
-		System.out.println("Lg TV --- ¼Ò¸® ³»¸°´Ù.");
+	public void volumeUp() {
+		System.out.println("Lg TV --- ì†Œë¦¬ë¥¼ ì˜¬ë¦°ë‹¤.");
+	}
+	public void volumeDown() {
+		System.out.println("Lg TV --- ì†Œë¦¬ë¥¼ ë‚´ë¦°ë‹¤.");
 	}
 }
