@@ -1,16 +1,16 @@
 package test;
 
-import com.fruit.dao.fruitDAO;
+import com.fruit.dao.FruitDAO;
 import com.fruit.vo.BuyerVO;
 
 public class DaoTest {
 
 	public static void main(String[] args) {
 		String id = "b01";
-		fruitDAO dao = null;
+		FruitDAO dao = null;
 		BuyerVO bvo = null;
 				
-		dao = new fruitDAO();
+		dao = new FruitDAO();
 		bvo = dao.getBuyerInfo(id);
 		System.out.println("id:" + bvo.getId());
 		System.out.println("pass:" + bvo.getPass());
