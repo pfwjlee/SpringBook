@@ -4,12 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Buyer 정보 검색</title>
+<title>첫화면</title>
 </head>
 <body>
-<form method="post" action="buyerInfo1.jsp">
-	바이어ID : <input type="text" size=20 name="bid"></input><br>
-	<input type="submit" value="검색" />
-</form>
+<div align="center">
+<h2>과일 판매 사이트</h2>
+<hr>
+<a href="buyerMenu.jsp">바이어 메뉴</a><br>
+<a href="sellerMenu.jsp">셀러 메뉴</a><br>
+</div>
+
 </body>
 </html>

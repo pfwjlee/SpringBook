@@ -23,7 +23,8 @@ public class FruitService {
 	}
 	
 	public BuyerVO getBuyerInfo(String id) {
-		return fruitDAO.getBuyerInfo(id);
+		BuyerVO vo = fruitDAO.getBuyerInfo(id);
+		return vo;
 	}
 
 	public void regBuyerMoney(String id, int money) {

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.fruit.vo.BuyerVO;
 import com.fruit.vo.SellerVO;
@@ -23,13 +24,15 @@ public class FruitDAO {
 	"update seller set money=money+applePrice*?,appleCount=appleCount-? where id=?";
 	private final String SELLER_INFO = "select * from seller where id=?";
 	private final String SELLER_APPLE_REG = "update seller set appleCount=appleCount+?, applePrice=? where id=?";
-
+	private final String GET_SELLER_LIST = "select * from seller";
+	private final String GET_BUYER_LIST = "select * from buyer";
 //	private static fruitDAO dao = new fruitDAO();
 //	private fruitDAO() {};
 	
 //	public static fruitDAO getInstance() {
 //		return dao;
 //	}
+	
 	
 	public Connection connect() {
 		Connection conn=null;
@@ -41,6 +44,21 @@ public class FruitDAO {
 			// TODO: handle exception
 		} 
 		return conn;
+	}
+	
+	public List<BuyerVO> getBuyerList() {
+		try {
+			conn = connect();
+			pstmt = conn.prepareStatement(GET_BUYER_LIST);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BuyerVO bvo = new BuyerVO();
+				bvo.setId(rs.getString("ID"));
+				bvo.setMoney(rs.getInt("MONEY"));
+				bvo.setAppleCount(rs.getInt("APPLECOUNT"));
+				
+			}
+		}
 	}
 
 	public int getApplePrice(String id) {
@@ -121,6 +139,7 @@ public class FruitDAO {
 	}
 	
 	public BuyerVO getBuyerInfo(String id) {
+		System.out.println("getBuyerInfo:" + id);
 		BuyerVO bvo = null;
 		try {
 			conn = connect();

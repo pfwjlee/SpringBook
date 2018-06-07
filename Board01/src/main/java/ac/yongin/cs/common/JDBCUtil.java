@@ -11,7 +11,7 @@ public class JDBCUtil {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 //			DriverManager.getConnection("jdbc:mysql://localhost:3305/board?useUnicode=true&characterEncoding=utf8");
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/bootboard", "root", "cs1234");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/bootboard?useSSL=false", "root", "cs1234");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
