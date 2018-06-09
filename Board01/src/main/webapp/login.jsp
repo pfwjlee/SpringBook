@@ -10,7 +10,7 @@
 <div align="center">
 <h2>로그인</h2><font color="red"> ${error }</font>
 <hr>
-<form action="login_proc.jsp" method="post">
+<form action="login.do" method="post">
 <table border="1" cellpadding="0" cellspacing="0">
 	<tr>
 		<td bgcolor="orange">아이디</td>

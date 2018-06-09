@@ -1,14 +1,10 @@
 <%@ page import="java.util.List" %>
-<%@ page import="ac.yongin.cs.board.dao.BoardDaoImpl" %>
-<%@ page import="ac.yongin.cs.board.dao.BoardDao" %>
 <%@ page import="ac.yongin.cs.board.vo.BoardVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%
-	BoardVO vo = new BoardVO();
-	BoardDao boardDao = new BoardDaoImpl();
-	List<BoardVO> boardList = boardDao.getBoardList(vo);
+	List<BoardVO> boardList=(List)session.getAttribute("boardList");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,7 +15,7 @@
 <body>
 <div align="center">
 <h2>글목록</h2>
-<h3>태스트님 환영합니다...<a href="logout_proc.jsp">Log-out</a></h3>
+<h3>태스트님 환영합니다...<a href="logout.do">Log-out</a></h3>
 
 <form action="getBoardList.jsp" method="post">
 <table border="1" cellpadding="0" width="700">
@@ -47,7 +43,7 @@
 <% for(BoardVO board : boardList) { %>
 <tr>
 	<td><%= board.getSeq() %></td>
-	<td align="left"><a href="getBoard.jsp?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
+	<td align="left"><a href="getBoard.do?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
 	<td><%= board.getWriter() %></td>
 	<td><%= board.getRegDate() %></td>
 	<td><%= board.getCnt() %></td>
