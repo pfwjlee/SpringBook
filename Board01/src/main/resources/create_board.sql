@@ -1,3 +1,5 @@
+use database bootboard; // or anything you want to use.
+
 create table users(
 	id varchar(8) primary key,
 	password varchar(8),
