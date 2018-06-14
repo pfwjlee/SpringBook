@@ -1,5 +1,4 @@
 <%@ page import="java.util.List" %>
-<%@ page import="ac.yongin.cs.board.dao.BoardDaoImpl" %>
 <%@ page import="ac.yongin.cs.board.dao.BoardDao" %>
 <%@ page import="ac.yongin.cs.board.vo.BoardVO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
